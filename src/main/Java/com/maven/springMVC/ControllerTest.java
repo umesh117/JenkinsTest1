@@ -130,7 +130,7 @@ public class ControllerTest {
     public String processImage(String imagePath,HttpSession session) throws IOException {
         ServletContext context=session.getServletContext();
         String path="/Images";
-		Files.createDirectories(path);
+		Files.createDirectories(Paths.get(path));
         String realImgPath=context.getRealPath(path+"\\"+imagePath);
 
         byte[] imgbytes=Files.readAllBytes(Paths.get(realImgPath));
